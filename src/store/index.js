@@ -7,14 +7,12 @@ export const initialState = {
     list: [],
     singleJob: {},
   },
-  favs: {
-    favList: [],
-  },
+  favoriteJobs: [],
 };
 
 const mainReducer = combineReducers({
   jobs: jobsReducer,
-  favs: favJobsReducer,
+  favoriteJobs: favJobsReducer,
 });
 
 const configureStore = () =>
