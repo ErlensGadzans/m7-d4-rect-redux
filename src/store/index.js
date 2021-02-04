@@ -1,6 +1,9 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import { jobsReducer } from "../reducers/jobs";
 import { favJobsReducer } from "../reducers/listFavoriteJob";
+import thunk from "redux-thunk";
+
+const composedEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const initialState = {
   jobs: {
@@ -15,11 +18,10 @@ const mainReducer = combineReducers({
   favoriteJobs: favJobsReducer,
 });
 
-const configureStore = () =>
-  createStore(
+export default function configureStore() {
+  return createStore(
     mainReducer,
     initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    composedEnhancer(applyMiddleware(thunk))
   );
-
-export default configureStore;
+}
