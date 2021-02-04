@@ -22,10 +22,10 @@ class SingleCard extends Component {
         <Container>
           <Col xs={12} className="my-3">
             <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={this.props.job.company_logo} />
+              <Card.Img variant="top" src={this.props.jobs.list.company_logo} />
               <Card.Body>
-                <Card.Title>{this.props.job.title}</Card.Title>
-                <Card.Text> {this.props.job.location}</Card.Text>
+                <Card.Title>{this.props.jobs.list.title}</Card.Title>
+                <Card.Text> {this.props.jobs.list.location}</Card.Text>
                 <Button variant="primary" onClick={(e) => this.handleSubmit(e)}>
                   Details
                 </Button>

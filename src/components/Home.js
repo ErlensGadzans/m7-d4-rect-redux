@@ -7,11 +7,11 @@ const mapStateToProps = (state) => state;
 
 class Home extends Component {
   render() {
-    console.log(this.props);
+    console.log(this.props.jobs.list);
     return (
       <Row>
-        {this.props.jobs &&
-          this.props.jobs.map((job) => (
+        {this.props.jobs.list &&
+          this.props.jobs.list.map((job) => (
             <SingleCard key={new Date() + Math.random()} job={job} />
           ))}
       </Row>
