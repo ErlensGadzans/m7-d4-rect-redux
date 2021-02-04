@@ -17,8 +17,8 @@ class Favorites extends Component {
         <Row className="homepage">
           <Col xs={12} lg={6} className="listCol">
             <Row className="w-100">
-              {this.props.listFavoriteJob &&
-                this.props.listFavoriteJob.map((job, index) => (
+              {this.props.favoriteJobs &&
+                this.props.favoriteJobs.map((job, index) => (
                   //   console.log(job)
                   <SingleCard job={job} key={index} />
                 ))}

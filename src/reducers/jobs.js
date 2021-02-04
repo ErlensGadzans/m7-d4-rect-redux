@@ -1,11 +1,11 @@
 import { initialState } from "../store";
 
-export const jobsReducer = (state = initialState.jobs, action) => {
+export const jobsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_JOBS":
       return {
         ...state,
-        jobs: action.payload,
+        list: action.payload,
       };
 
     case "SINGLE_JOB":
