@@ -5,7 +5,7 @@ export const jobsReducer = (state = initialState.jobs, action) => {
     case "SET_JOBS":
       return {
         ...state,
-        jobs: action.payload,
+        list: action.payload,
       };
 
     case "SINGLE_JOB":
