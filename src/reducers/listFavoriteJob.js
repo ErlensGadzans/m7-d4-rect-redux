@@ -1,19 +1,17 @@
 import { initialState } from "../store";
 
-export const mainReducer = (state = initialState, action) => {
+export const favJobsReducer = (state = initialState.favs, action) => {
   switch (action.type) {
     case "ADD_FAVORITE":
       return {
         ...state,
-        state.concat(action.payload), //SOMETHING WRONG
+        favList: [...state.favList.concat(action.payload)],
       };
 
     case "REMOVE_FAVORITE":
       return {
         ...state,
-        
-          ...state.filter((job) => job.id !== action.payload),
-       
+        favList: [...state.favList.filter((job) => job.id !== action.payload)],
       };
 
     default:

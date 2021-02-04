@@ -1,6 +1,6 @@
 import { initialState } from "../store";
 
-export const mainReducer = (state = initialState, action) => {
+export const jobsReducer = (state = initialState.jobs, action) => {
   switch (action.type) {
     case "SET_JOBS":
       return {
